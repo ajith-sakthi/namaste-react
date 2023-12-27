@@ -1,0 +1,30 @@
+{
+  "name": "ignite-our-app",
+  "version": "1.0.0",
+  "description": "This is react course by akshay saini",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajith-sakthi"
+  },
+  "keywords": [
+    "react",
+    "learing",
+    "phase"
+  ],
+  "author": "Akshay saini",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "broswerslist": [
+    "last 2 version"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
