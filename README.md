@@ -1,6 +1,6 @@
 # Namaste React
 
-# Parcel
+## Parcel
 - Dev Build
 - Local Server
 - HMR = Hot Module Replacement
@@ -18,3 +18,10 @@
 - HTTPs
 - Tree Shaking - remove unused code
 - Different dev and prod bundles
+
+## Component 
+### Two types of component
+- Class component 
+- Functional component 
+### Functional component
+Function component is simple JS function that return JSX or ReactElement
