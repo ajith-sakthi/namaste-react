@@ -25,3 +25,24 @@
 - Functional component 
 ### Functional component
 Function component is simple JS function that return JSX or ReactElement
+
+/**
+ * -Header
+ *  -Logo
+ *  -Nav items
+ *      -Home
+ *      -About
+ *      -Cart
+ * -Body
+ *  -Search
+ *  -restaurant cards
+ *      -image
+ *      -res name
+ *      -cuisine
+ *      -stars
+ *      -deliverytime
+ * -Footer
+ *  -copyright
+ *  -links
+ * 
+ */
