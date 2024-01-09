@@ -3,6 +3,7 @@ import Rescards from "./Rescards";
 import { useState }  from "react";
 
 const Body=()=>{
+  //React state variable
   let [listOfRestaurant,setlistOfRestaurant]=useState(resList);
 
 
