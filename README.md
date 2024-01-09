@@ -46,3 +46,7 @@ Function component is simple JS function that return JSX or ReactElement
  *  -links
  * 
  */
+
+ ## React Hooks(Many hooks there. These two mostly used)
+ - useState()- normal JS utility function
+ -useEffect()-normal JS utility function
