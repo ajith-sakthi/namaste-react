@@ -5,9 +5,6 @@ import { useState }  from "react";
 const Body=()=>{
   //React state variable
   let [listOfRestaurant,setlistOfRestaurant]=useState(resList);
-
-
-
   //Normal JS variable
     let listOfRestaurantOne=[
         { "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
