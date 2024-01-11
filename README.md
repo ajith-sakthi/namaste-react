@@ -50,3 +50,10 @@ Function component is simple JS function that return JSX or ReactElement
  ## React Hooks(Many hooks there. These two mostly used)
  - useState()- normal JS utility function
  -useEffect()-normal JS utility function
+
+ ## Shimmer UI
+ - fake design shows before the actual UI shows 
+ - Most of companies use this Shimmer UI e.g Youtube,linkedin,swiggy etc...
+
+ ## Conditional Rendering
+ - Rendering the things based of some condition is called conditional Rendering
