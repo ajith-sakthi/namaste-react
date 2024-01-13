@@ -59,3 +59,8 @@
     padding:5px;
     margin-left:5px;
 }
+.user-card{
+    padding:10px;
+    margin-bottom: 5px;
+    border:1px solid black;
+}
