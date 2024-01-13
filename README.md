@@ -60,13 +60,13 @@ Function component is simple JS function that return JSX or ReactElement
 
  ## useEffect() Hook
  - Syntax is **useEffect(()=>{ },[])**
- - []- dependency array is optional
+ - **[]**- dependency array is optional
  - **useEffect(()=>{ })** - without dependency array, useEffect called everytime when component render.
  - **useEffect(()=>{ },[])** - with empty dependency array, useEffect called once when initially component rendered.
  - **useEffect(()=>{ }**,[something inside array]) - with something inside dependency array, useEffect called everytime when that something changes everytime.
 
  ## useState() Hook
- - Never use useState() outside the componen.
+ - Never use useState() outside the component.
  - Always put useState() variable top of the program or first line of the component function.
  - Don't use useState() variable inside ifelse conditon, for loop, function(), because it makes inconsistency in an app.
  - The above point are good practices to use useState() variable. It gives smooth experience of useState().
