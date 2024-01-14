@@ -14,7 +14,9 @@ class About extends Component{
                 <h2>Hi dev's, welcome to CalmMind restaurant</h2>
                 {/* <Userfun name={"Ajith fun"}/> */}
     
-                <UserCls name={"Ajith class"} location={"Denmark class"}/> 
+                <UserCls/> 
+                <UserCls/> 
+
             </div>
         )
 }

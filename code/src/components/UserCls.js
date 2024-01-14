@@ -4,31 +4,30 @@ class UserCls extends React.Component{
     constructor(props){
         super(props);
         console.log(props);
-        //big object
+
         this.state={
-            count:0,
-            count2:2
+            userInfo:{
+                name:"Ajith",
+                location:"default"
+            }
         }
-        console.log("child constructor" )
     }
-    componentDidMount(){
-        console.log("child component did mount")
+   
+    async componentDidMount(){
+            const data = await fetch("https://api.github.com/users/ajith-sakthi");
+            const json= await data.json()
+
+            this.setState({
+                userInfo:json
+        })
     }
     render(){
         console.log("child render")
-        const {name,location}=this.props;
-        const{count}=this.state;
+        const{name,location,avatar_url}=this.state.userInfo;
         //Never update state variable directly it doesn't update
         return(
             <div className="user-card">
-                <h1>Count:{count}</h1>
-                <button onClick={
-                    ()=>{
-                        this.setState({
-                         count:this.state.count + 1
-                        })
-                    }
-                }>Increase count</button>
+                {/* <img src={avatar_url}/> */}
                 <h2>Name:{name}</h2>
                 <h3>Location:{location} </h3>
                 <h4>contact:@curiousdev </h4>
@@ -38,3 +37,26 @@ class UserCls extends React.Component{
 }
 
 export default UserCls;
+
+/**
+ * ----MOUNTING cycle(instance created)------
+ * ---render phase starts-----
+ * -constructor
+ * -render() call--render the default value
+ * 
+ * -----commit phase starts---
+ * -default value -DOM manipulation<html element>
+ * -componentDidMount() called
+ *   -fetch API
+ *   -
+ * ------UPDATE cycle starts-----
+ * ----render phase starts-----
+ * - this.setStart() called
+ * - render () called 
+ * 
+ * ------Commit phase starts----
+ * -API value DOM manipulation <html element> happened
+ * -componentDidUpdate() called
+ * 
+ 
+ */
