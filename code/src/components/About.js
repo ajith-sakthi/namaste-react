@@ -15,8 +15,6 @@ class About extends Component{
                 {/* <Userfun name={"Ajith fun"}/> */}
     
                 <UserCls/> 
-                <UserCls/> 
-
             </div>
         )
 }

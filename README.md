@@ -81,3 +81,16 @@ Function component is simple JS function that return JSX or ReactElement
  - **Outlet**- used to replace the component depends upon the path
  - **useRouteError(hooks)**- used to show the exact error status,
  - **useParams(hooks)** - used to read the dynamic id
+
+ ## Optimize our app-customHooks,code splitting.
+ - Hooks is normal javascript utility function.
+ - create our own custom hooks.
+ - If we have a lot of components it bundles into one files, if it happens bundle file is high.
+ - In other scenario, without bundle the files, we can't load the lot of components in browsers.
+ - The above two scenario is not suits when come to large scale application.
+ - To solve this, we use concept called code splitting.
+ - Simple words, bundle each component separately.
+ - To achieve that, we use  lazy() function and wrap the component inside the <Suspense></Suspense> component that given by react.
+ - If we put component inside lazy() function, on first load that component is not inside the bundle file.
+ But, when click that component, react create a separate bundle for that component. This is called code splitting.
+ - Chunking, lazy loading, code splitting, dynamic import, on demand change, these all are same concept with different jargons.

@@ -64,3 +64,9 @@
     margin-bottom: 5px;
     border:1px solid black;
 }
+.online{
+ color:green;
+}
+.offline{
+    color:red;
+}

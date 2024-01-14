@@ -3,6 +3,7 @@ import { useState, useEffect }  from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import {RESCARDSMAIN_API} from "../utils/constants";
+import useOnlinestatus from "../utils/useOnlinestatus";
 
 const Body=()=>{
   //React state variable - for filtered the card
@@ -14,6 +15,8 @@ const Body=()=>{
   /** to know each time state variable updates the whole
   component re-render again(reconciliation algorithm)*/ 
   console.log("body rendered")
+  
+  const onlineStatus=useOnlinestatus();
 
   useEffect(()=>{
         fetchData();
@@ -24,6 +27,12 @@ const Body=()=>{
       console.log(json)
       setlistOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
+    if(onlineStatus === false){
+      return (
+        <h1>Hey dev looks link you're offline check your wifi or internet connection!!</h1>
+      )
     }
 
     // conditonal rendering
