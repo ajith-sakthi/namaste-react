@@ -1,7 +1,9 @@
 import {LOGO_URL} from "../utils/constants";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import {Link} from "react-router-dom";
 import useOnlinestatus from "../utils/useOnlinestatus";
+import Usercontext from "../utils/Usercontext";
+
 
 
 const Header=() =>{
@@ -9,34 +11,39 @@ const Header=() =>{
     const [btnNameReact,setbtnNameReact]=useState("Login");
     console.log("Header rendered");
 
+    const {loggedInuser}=useContext(Usercontext)
+    
+
     useEffect(()=>{
-        console.log("useeffect called")
+        // console.log("useeffect called")
     },[btnNameReact]);
     
     const onlineStatus=useOnlinestatus();
     return (
-        <div className="header">
-        <div className="logo">
-            <img width="90px" src={LOGO_URL}/>      
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Status:{onlineStatus ? <span className="online">online</span> : <span className="offline">offline</span> } </li>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact us</Link></li>
-                <li><Link to="/grocery">Grocery</Link></li>
-                <li>Cart</li>
-                <button className="btn" onClick={
-                    /**For toggle this conditonal rendering used */
-                    () => {
-                        btnNameReact==="Login"
-                        ?setbtnNameReact("Logout")
-                        : setbtnNameReact("Login");
-                    }
-                }>{btnNameReact}</button>
-            </ul>
-        </div>
+        <div className="flex justify-around bg-indigo-100">
+            <div>
+                <img  className="w-18 h-16" src={LOGO_URL}/>      
+            </div>
+            <div className="flex items-center">
+                <ul className="flex ">
+                    <li className="px-2 mx-4 mt-2">Status:{onlineStatus ? <span className="text-green-900">online</span> : <span className="text-red-600">offline</span> } </li>
+                    <li className="p-2 mx-4 hover:bg-indigo-500 rounded-lg"><Link to="/">Home</Link></li>
+                    <li className="p-2 mx-4 hover:bg-indigo-500 rounded-lg"><Link to="/about">About</Link></li>
+                    <li className="p-2 mx-4 hover:bg-indigo-500 rounded-lg"><Link to="/contact">Contact us</Link></li>
+                    <li className="p-2 mx-4 hover:bg-indigo-500 rounded-lg"><Link to="/grocery">Grocery</Link></li>
+                    <li className="px-2 mx-4 mt-2">Cart</li>
+                    <button className="p-2 mx-4 w-20 bg-indigo-300 rounded-lg hover:bg-indigo-500" onClick={
+                        /**For toggle this conditonal rendering used */
+                        () => {
+                            btnNameReact==="Login"
+                            ?setbtnNameReact("Logout")
+                            : setbtnNameReact("Login");
+                        }
+                    }>{btnNameReact}</button>
+                    <li>{loggedInuser}</li>
+                </ul>
+                
+            </div>
         </div>
     )
 

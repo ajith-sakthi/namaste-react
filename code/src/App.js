@@ -1,5 +1,5 @@
 
-import React, {lazy,Suspense} from "react";
+import React, {lazy,Suspense, useEffect,useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,17 +8,37 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Resmenu from "./components/Resmenu"
 import {createBrowserRouter,RouterProvider, Outlet} from "react-router-dom";
-// import Grocery from "./components/Grocery";s
+// import Grocery from "./components/Grocery";
+import Usercontext from "./utils/Usercontext"
 
 const Grocery = lazy(()=>{
     return import("./components/Grocery")
 });
 const Applayout=() =>{
+
+    const[Name,setName]=useState();
+
+    useEffect(()=>{
+        //some authentication
+        const data={
+            name:"sakthi"
+        }
+       setName(data.name);
+    },[]);
     return (
+     
         <div className="app-container">
+            <Usercontext.Provider value={{loggedInuser: Name,setName}}>
             <Header/>
             <Outlet/>
+            </Usercontext.Provider>
+            {/* Nested Provider */}
+            {/* <Usercontext.Provider value={{loggedInuser:"ben tennison"}}>
+            <Outlet/>
+            </Usercontext.Provider>
+             */}
         </div>
+       
     )
 }
 
