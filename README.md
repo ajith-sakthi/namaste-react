@@ -85,12 +85,31 @@ Function component is simple JS function that return JSX or ReactElement
  ## Optimize our app-customHooks,code splitting.
  - Hooks is normal javascript utility function.
  - create our own custom hooks.
- - If we have a lot of components it bundles into one files, if it happens bundle file is high.
- - In other scenario, without bundle the files, we can't load the lot of components in browsers.
- - The above two scenario is not suits when come to large scale application.
- - To solve this, we use concept called code splitting.
+ - If we have a lot of components it bundles into one files, if it happens that bundled file size is high.
+ - In other scenario, without bundle the files, we can't load that lot of components in browsers.
+ - The above two scenarios are not suits when come to large scale application.
+ - To solve this, we use concept called **code splitting**.
  - Simple words, bundle each component separately.
  - To achieve that, we use  lazy() function and wrap the component inside the <Suspense></Suspense> component that given by react.
  - If we put component inside lazy() function, on first load that component is not inside the bundle file.
- But, when click that component, react create a separate bundle for that component. This is called code splitting.
+ But, when click that component, react create a separate bundle for that component. This is called **code splitting**.
  - Chunking, lazy loading, code splitting, dynamic import, on demand change, these all are same concept with different jargons.
+
+ ## Data is new oil
+ ### Higher order components
+ - It is function, that takes input as existing component, and return the existing component as enhanced component.
+ ### Lifting the state up
+ - Passing data from child to parent and parent send the data as prop to child. This is called **lifting the state up**
+ ### Controlled and Uncontrolled components.
+ - One component controlled the other component - now that other component is called **controlled component**
+ ### Props drilling
+ - Assume 5 components, it's hierarchy in sequence like 1,2,3,4,5.
+ - We have scenario, pass data from 1st component to 5th component.
+ - For that, first we pass data from 1st to 2nd and 2nd to 3rd and 3rd to 4th and 4th to 5th.
+ - These sequence is called 'Props drilling'
+ - This is not a good practice to pass the data.
+ - To solve this, we use concept called **Context**
+### Context
+- Context concept simple words- create data in one place and use it in our whole app from any place.
+- By using **Context** concept, globally we can  access the data, update the data, modify the data.
+
