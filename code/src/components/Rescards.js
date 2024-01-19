@@ -8,7 +8,7 @@ const Rescards=(props)=>{
     const{cloudinaryImageId,name,cuisines,avgRating,costForTwo}=resData?.info
 
     const {loggedInuser}=useContext(Usercontext);
-    console.log({loggedInuser})
+    // console.log({loggedInuser})
     
     return (
             

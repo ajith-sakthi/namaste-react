@@ -5,3 +5,5 @@ export const LOGO_URL="https://cms-assets.tutsplus.com/cdn-cgi/image/width=400/u
 export const MENU_API="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0035068&lng=77.5890953&restaurantId="
 
 export const RESCARDSMAIN_API="https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0035068&lng=77.5890953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const CARTLOGO_URL ="https://png.pngtree.com/png-clipart/20190920/original/pngtree-shopping-cart-convenient-icon-png-image_4637407.jpg";

@@ -1,7 +1,21 @@
 import {CARD_URL} from "../utils/constants.js";
+import {useDispatch} from "react-redux";
+import {addItems} from "../utils/cartSlice";
 const Itemlist=({items})=>{
+    const dispatch = useDispatch();
+    const handleAddItems=(item)=>{
+        dispatch(addItems(item)); // addItems("pizza")== action.payload         
+        
+    }
+    /**
+     * when addItems is called in background redux create a object like
+     * {
+     *  payload:"pizza"
+     * }
+     */
     
-    console.log(items);
+    // console.log(items);
+    
     return (
         <div>
             {items.map((c)=>{
@@ -14,7 +28,7 @@ const Itemlist=({items})=>{
                         
                         <div>
                             <div className="absolute">
-                                <button type="button" className="bg-black text-white p-1 rounded-md">Add +</button>
+                                <button type="button" className="bg-black text-white p-1 rounded-md" onClick={()=>handleAddItems(c)}>Add +</button>
                             </div>
                                 <img src={CARD_URL+c.card.info.imageId} className="w-[150px] "/>
                             </div>
