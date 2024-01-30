@@ -12,7 +12,7 @@ const Rescards=(props)=>{
     
     return (
             
-            <div className="w-80 h-[500px] p-2 m-2 bg-indigo-100 hover:bg-indigo-200 rounded-lg" >
+            <div data-testid="testCards" className="w-80 h-[500px] p-2 m-2 bg-indigo-100 hover:bg-indigo-200 rounded-lg" >
                 <img className="rounded-lg w-full h-[200px]" alt ="logo" 
                 src={ CARD_URL+ cloudinaryImageId}/>
                 <h3 className="text-lg font-bold py-2">{name}</h3>

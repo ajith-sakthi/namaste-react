@@ -40,6 +40,7 @@ const Header=() =>{
                     <li className="px-2 mx-4 mt-2 font-bold" ><Link to="/cart">
                     <img className="w-8 mx-1 inline rounded-md" src={CARTLOGO_URL}/>
                     ({cartItems.length} items)</Link></li>
+                   
                     <button className="p-2 mx-4 w-20 bg-indigo-300 rounded-lg hover:bg-indigo-500" onClick={
                         /**For toggle this conditonal rendering used */
                         () => {
@@ -48,6 +49,7 @@ const Header=() =>{
                             : setbtnNameReact("Login");
                         }
                     }>{btnNameReact}</button>
+                   
                     <li>{loggedInuser}</li>
                 </ul>
                 

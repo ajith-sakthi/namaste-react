@@ -11,6 +11,7 @@ const Body=()=>{
   let [listOfRestaurant,setlistOfRestaurant]=useState([]);
    //React state variable - for rendering the card(copy of listOfRestaurant)
   const[filteredRestaurant,setfilteredRestaurant]=useState([]);
+  // console.log(filteredRestaurant);
   //React state variable- for search rendering
   const[searchValue,setsearchValue]=useState("");
   /** to know each time state variable updates the whole
@@ -28,7 +29,6 @@ const Body=()=>{
    fetchData= async ()=>{
       const data=await fetch(RESCARDSMAIN_API);
       const json=await data.json()
-      // console.log(json)
       setlistOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
@@ -44,12 +44,13 @@ const Body=()=>{
     <div className="">
             <div className="flex justify-center my-4">
                 <div className="">
-                  <input className="border-2 w-60 border-black rounded-md" type="text" value={searchValue} onChange={(sVal)=>{
+                  <input data-testid="searchId" className="border-2 w-60 border-black rounded-md" type="text" value={searchValue} onChange={(sVal)=>{
                         setsearchValue(sVal.target.value);
                   }}></input>
+                  
                   <button className="ml-2 px-2 py-1  bg-indigo-300 rounded-lg hover:bg-indigo-400" onClick={
                     ()=>{
-                      const filteredValue=listOfRestaurant.filter((res)=>{
+                      const filteredValue=listOfRestaurant?.filter((res)=>{
                         return res.info.name.toLowerCase().includes(searchValue.toLowerCase());
                       })
                       setfilteredRestaurant(filteredValue)
